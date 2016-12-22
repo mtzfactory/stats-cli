@@ -1,0 +1,39 @@
+<div style="padding-top: 50px;">
+<div class="row">
+  <div class="col-md-6" *ngFor="let counter of dataStore.counters; let j = index">
+    <a name="counter.counter"></a>
+    <base-chart class="chart"
+                [datasets]="counter.datasets"
+                [labels]="dataStore.period"
+                [options]="getChartOptions(j)"
+                [legend]="chartLegend"
+                [chartType]="'line'">
+    </base-chart>
+  </div>
+  <div class="clearfix" *ngIf="j % 2 == 0"></div>
+</div>
+</div>
+<!--
+<div class="row">
+  <div class="col-md-6">
+    <base-chart class="chart"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColours"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType">
+    </base-chart>
+  </div>
+  <div class="col-md-6" style="margin-bottom: 10px;">
+    <table class="table table-responsive table-condensed">
+      <tr>
+        <th *ngFor="let label of lineChartLabels">{{label}}</th>
+      </tr>
+      <tr *ngFor="let d of lineChartData">
+        <td *ngFor="let label of lineChartLabels; let j = index">{{d && d.data[j]}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+-->

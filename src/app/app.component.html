@@ -1,0 +1,78 @@
+<nav class="navbar navbar-default navbar-fixed-top"> <!--navbar-static-top">-->
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">stats</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="navbar-collapse collapse" id="bs-navbar-collapse-1">
+
+      <ul class="nav navbar-nav">
+        <li [class.active]="isGsmSelected"><a href="#" (click)="isGsmSelected = true;">gsm <span class="sr-only">(current)</span></a></li>
+        <li [class.active]="!isGsmSelected"><a href="#" (click)="isGsmSelected = false;">umts</a></li>
+      </ul>
+
+      <form [formGroup]="formCell" (ngSubmit)="onSubmit(formCell.value)" class="navbar-form navbar-left">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-stats"></span>
+            </span>
+            <input type="text" formControlName="cellName" class="form-control" placeholder="introduce nodo o celda">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-primary" [disabled]="!formCell.valid">buscar</button>
+            </span>
+          </div><!-- /input-group -->
+          <div class="input-group">
+            <p class="navbar-text">dias:</p>
+            <span class="input-group-btn">
+              <select formControlName="cellDays" class="btn btn-default" required>
+                <option value="15">15</option>
+                <option value="21">21</option>
+                <option value="31">31</option>
+                <option value="40" selected>40</option>
+              </select>
+            </span>
+          </div><!-- /input-group -->
+        </div><!-- form-group -->
+      </form>
+
+      <div *ngIf="elapsedTime" class="nav navbar-nav" style="width: 15em; padding-top: 15px;">
+        <progressbar [max]="100" [value]="elapsedTime"><span style="color:white; white-space:nowrap;">{{elapsedTime/5}}s</span></progressbar>
+      </div>
+
+      <div *ngIf="errorMessage" class="navbar-text" style="margin-top: 0px; margin-bottom: 0px">
+        <div class="alert alert-danger" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>{{errorMessage}}
+        </div>
+      </div>
+
+      <div *ngIf="dataStore" class="navbar-text">
+        <span class="glyphicon glyphicon-random" aria-hidden="true"></span>
+        <span>&nbsp;{{dataStore.bsc}}</span>
+        <span class="glyphicon glyphicon-tag" aria-hidden="true" style="padding-left: 1em;"></span>
+        <span>&nbsp;{{dataStore.site}}</span>
+        <span class="glyphicon glyphicon-globe" aria-hidden="true" style="padding-left: 1em;"></span>
+        <span>&nbsp;{{dataStore.vendor}}</span>
+      </div>
+
+      <div *ngIf="totalElapsedTime" class="navbar-text">
+        <span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span>
+        <span>&nbsp;{{totalElapsedTime}}&nbsp;ms</span>
+      </div>
+
+      <p class="navbar-text navbar-right">Desarrollado por <b><a href="mailto:ricardo.martinez.monje@gmail.com" class="navbar-link">mtzFactory</a></b>&nbsp;</p>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!--<div class="container">-->
+  <charts-component *ngIf="dataStore" [dataStore]="dataStore"></charts-component>
+<!--</div>--> <!-- /container -->

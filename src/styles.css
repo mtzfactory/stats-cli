@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+.alert {
+  display: inline-block;
+  height: 34px;
+  padding-top: 6px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.navbar-form {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+div.progress {
+  margin-bottom: 10px !important;
+}

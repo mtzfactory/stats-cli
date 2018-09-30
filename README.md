@@ -9,7 +9,7 @@
 
 Small dashboard to show the different network cell Kpi stored in a database.
 
-This was my first web app and it was early 2016, so, __Angular__ seemed a good option to start with.
+_This was my first web app and it was early __2016__,_ so, __Angular__ seemed a good option to start with.
 
 The backend was done in raw __Php__ and __MySql__ as the database, nothing shinny there, just the functions to filter the table...
 

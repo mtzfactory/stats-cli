@@ -1,31 +1,35 @@
-# StatsTest
+![angular](https://mtzfactory.github.io/logos/png-2/angular.png)
+![javascript](https://mtzfactory.github.io/logos/png-2/javascript.png)
+![php](https://mtzfactory.github.io/logos/png-2/php.png)
+![mysql](https://mtzfactory.github.io/logos/png-2/mysql.png)
+![html](https://mtzfactory.github.io/logos/png-2/html-5.png)
+![css](https://mtzfactory.github.io/logos/png-2/css-3.png)
+
+# STATS CLI
+
+Small dashboard to show the different network cell Kpi stored in a database.
+
+This was my first web app and it was early 2016, so, __Angular__ seemed a good option to start with.
+
+The backend was done in raw __Php__ and __MySql__ as the database, nothing shinny there, just the functions to filter the table...
+
+## Development server
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.15.
 
-## Development server
+Clone the repo and do:
+
+```bash
+$ git clone https://github.com/mtzfactory/stats_cli.git
+$ cd stats_cli
+$ npm install
+```
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Remember that you need your own MySql server and you have to edit the configuration settings in `connect2.php`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+## Screens
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). 
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to Github Pages
-
-Run `ng github-pages:deploy` to deploy to Github Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+· There's only one page, showing all the related KPI of the filtered cell.
+[![m](images/m1.jpg)](images/m1_original.png)

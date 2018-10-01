@@ -7,11 +7,11 @@
 
 # STATS CLI
 
-Small dashboard to show the different network cell Kpi stored in a database.
+Small dashboard showing different network cell KPIs.
 
 _This was my first web app and it was early __2016__,_ so, __Angular__ seemed a good option to start with.
 
-The backend was done in raw __Php__ and __MySql__ as the database, nothing shinny there, just the functions to filter the table...
+The backend was done in raw __Php__ and __MySql__ as the database, nothing brilliant there, just some functions to filter the database...
 
 ## Development server
 
@@ -31,5 +31,5 @@ Remember that you need your own MySql server and you have to edit the configurat
 
 ## Screens
 
-· There's only one page, showing all the related KPI of the filtered cell.
+· Dashboard showing KPIs related to the filtered cell.
 [![m](images/m1.jpg)](images/m1_original.png)
